@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vaultctl"
-version = "0.2.1"
+version = "0.2.2"
 description = "Project vault initializer with mountable global vault folders"
 requires-python = ">=3.11"
 dependencies = []
