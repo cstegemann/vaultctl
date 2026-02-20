@@ -5,7 +5,7 @@ A simple python cli tool to "split" my notes into different vaults for easier ma
 
 ## Installation
 
-> make sure to copy config.toml to your config path (-> your path/.config/vaultctl/config.toml) and adjust as needed
+> First make sure to copy config.toml to your config path (-> your path/.config/vaultctl/config.toml) and adjust as needed
 
 I'm using pipx to make the script available via command line. With pipx, simply run
 ```
