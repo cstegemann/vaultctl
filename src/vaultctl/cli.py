@@ -179,14 +179,19 @@ def ensure_gitignore(project_root: Path, cfg: Config) -> None:
     if not (project_root / ".git").exists():
         return
     gi = project_root / ".gitignore"
-    entry = f"{cfg.project_vault_dir}/{cfg.mount_dir}/\n"
+    entries = [
+        f"{cfg.project_vault_dir}/{cfg.mount_dir}/\n",
+        f"{cfg.project_vault_dir}/.{cfg_editor}/\n",# works for obsidian!
+    ]
     if gi.exists():
         existing = gi.read_text(encoding="utf-8")
-        if entry.strip() in existing:
-            return
-        gi.write_text(existing + entry, encoding="utf-8")
+        for entry in entries:
+            if entry.strip() in existing:
+                continue
+            gi.write_text(existing + entry, encoding="utf-8")
     else:
-        gi.write_text(entry, encoding="utf-8")
+        for entry in entries:
+            gi.write_text(entry, encoding="utf-8")
 
 
 def create_desktop_launcher(vault: Path, cfg: Config) -> None:
