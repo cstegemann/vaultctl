@@ -1,0 +1,16 @@
+config_version = 1
+
+# Root directory where global (mountable) vaults live, adjust as needed and make sure it doesnt conflict with anything!
+vault_root = "/home/YOU/vnotes"
+
+# this will be created when you run vaultctl init, make sure it's unlikely to conflict with existing stuff
+project_vault_dir = ".vnotes"
+mount_dir = "_m"
+
+auto_mount = ["global"]
+
+# desktop launcher doesnt really work yet, so turned off
+create_desktop_launcher = false
+desktop_launcher_name = "Open Project Vault.desktop"
+
+editor = "obsidian"
